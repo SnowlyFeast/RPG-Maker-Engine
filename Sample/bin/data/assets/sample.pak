@@ -1,0 +1,5 @@
+[TEXTURE]
+test_tex    = ./data/textures/test_texture.bmp
+tile1       = ./data/textures/test_tile1.bmp
+shork       = ./data/textures/shork.bmp
+[/TEXTURE]

@@ -1,0 +1,69 @@
+# Project: RPG ME
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = mingw32-g++.exe -D__DEBUG__
+CC   = mingw32-gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = 
+OBJ  = gameengine.o glapi.o keyinputapi.o scene.o sceneobject.o renderobject.o assetparser.o gameenginebuilder.o gameenginelauncher.o datatype.o mastersceneobject.o collider.o physicsengine.o textobject.o $(RES)
+LINKOBJ  = gameengine.o glapi.o keyinputapi.o scene.o sceneobject.o renderobject.o assetparser.o gameenginebuilder.o gameenginelauncher.o datatype.o mastersceneobject.o collider.o physicsengine.o textobject.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -mwindows -lopengl32 -lglu32  -lgmon -pg  -g3 
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = "RPG ME.exe"
+CXXFLAGS = $(CXXINCS)   -pg -g3
+CFLAGS = $(INCS)   -pg -g3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before "RPG ME.exe" all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "RPG ME.exe" $(LIBS)
+
+gameengine.o: gameengine.cpp
+	$(CPP) -c gameengine.cpp -o gameengine.o $(CXXFLAGS)
+
+glapi.o: glapi.cpp
+	$(CPP) -c glapi.cpp -o glapi.o $(CXXFLAGS)
+
+keyinputapi.o: keyinputapi.cpp
+	$(CPP) -c keyinputapi.cpp -o keyinputapi.o $(CXXFLAGS)
+
+scene.o: scene.cpp
+	$(CPP) -c scene.cpp -o scene.o $(CXXFLAGS)
+
+sceneobject.o: sceneobject.cpp
+	$(CPP) -c sceneobject.cpp -o sceneobject.o $(CXXFLAGS)
+
+renderobject.o: renderobject.cpp
+	$(CPP) -c renderobject.cpp -o renderobject.o $(CXXFLAGS)
+
+assetparser.o: assetparser.cpp
+	$(CPP) -c assetparser.cpp -o assetparser.o $(CXXFLAGS)
+
+gameenginebuilder.o: gameenginebuilder.cpp
+	$(CPP) -c gameenginebuilder.cpp -o gameenginebuilder.o $(CXXFLAGS)
+
+gameenginelauncher.o: gameenginelauncher.cpp
+	$(CPP) -c gameenginelauncher.cpp -o gameenginelauncher.o $(CXXFLAGS)
+
+datatype.o: datatype.cpp
+	$(CPP) -c datatype.cpp -o datatype.o $(CXXFLAGS)
+
+mastersceneobject.o: mastersceneobject.cpp
+	$(CPP) -c mastersceneobject.cpp -o mastersceneobject.o $(CXXFLAGS)
+
+collider.o: collider.cpp
+	$(CPP) -c collider.cpp -o collider.o $(CXXFLAGS)
+
+physicsengine.o: physicsengine.cpp
+	$(CPP) -c physicsengine.cpp -o physicsengine.o $(CXXFLAGS)
+
+textobject.o: textobject.cpp
+	$(CPP) -c textobject.cpp -o textobject.o $(CXXFLAGS)
