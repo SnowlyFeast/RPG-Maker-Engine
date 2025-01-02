@@ -20,7 +20,7 @@ BTW, the reason it's called RPG Maker Engine is because it was initially intende
 
 ### Features
 - Render and Logic threads are separated to ensure update precision
-	- Logic thread use `high_resolution_clock` while render thread use  `WM_TIMER` event
+	- Logic thread use `QueryPerformanceFrequency` while render thread use  `WM_TIMER` event
 	- Render rate and Logic update rate are also separated
 - Support affine transform of `SceneObject`
 	- Translate, rotate and scale
